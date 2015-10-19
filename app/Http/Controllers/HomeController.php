@@ -34,6 +34,8 @@ class HomeController extends Controller
       if (isset($_POST['content_reverse'])) {
         $content = strrev($_POST['content_reverse']);
       }*/
+      $all_inputs = $request->all();
+      $all = (!empty($all_inputs)) ? $all_inputs : [];
 
       $title = $request->input('title');
       $content = $request->input('content');
@@ -56,7 +58,7 @@ class HomeController extends Controller
       }
 
       // return view('homepage')->with('title',$title)->with('text',$content);
-      return view('homepage',['title' => $title,'text' => $content]);
+      return view('homepage',['title' => $title,'text' => $content, 'all' => $all ]);
     }
 
 }

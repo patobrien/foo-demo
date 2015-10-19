@@ -7,6 +7,14 @@
 <h1>{{ $title }}</h1>
 <p>{{ $text }}</p>
 
+<h2>previous submission data</h2>
+
+<pre>
+
+  {{ var_dump($all) }}
+
+</pre>
+
 <h2>Title new blade form</h2>
 
 {!! Form::open(array('url' => '/')) !!}
